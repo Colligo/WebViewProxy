@@ -272,7 +272,7 @@ static NSPredicate* webViewProxyLoopDetection;
 }
 + (void)initialize {
     [WebViewProxy removeAllHandlers];
-    webViewUserAgentTest = [NSPredicate predicateWithFormat:@"self MATCHES '^Mozilla.*Mac OS X.*'"];
+    webViewUserAgentTest = [NSPredicate predicateWithFormat:@"self MATCHES '^i.*Colligo Engage.*'"];
     webViewProxyLoopDetection = [NSPredicate predicateWithFormat:@"self.fragment MATCHES '__webviewproxyreq__'"];
     // e.g. "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Mobile/10A403"
     [NSURLProtocol registerClass:[WebViewProxyURLProtocol class]];
