@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'WebViewProxyIOSMac'
   s.version      = '1.1.0'
-  s.summary      = 'A standalone iOS & OSX class for intercepting and proxying HTTP requests (e.g. from a Web View)'
+  s.summary      = 'Proxy WebView HTTP requests including JavaScript calls'
   s.homepage     = 'https://github.com/marcuswestin/WebViewProxy'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { 'marcuswestin' => 'marcus.westin@gmail.com' }
