@@ -15,4 +15,4 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.8'  
   s.ios.framework    = 'UIKit'
   s.osx.framework    = 'WebKit'
-end
+end 
