@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'WebViewProxyIOSMac'
-  s.version      = '1.1.1'
+  s.version      = '1.1.2'
   s.summary      = 'Proxy WebView HTTP requests including JavaScript calls'
   s.homepage     = 'https://github.com/marcuswestin/WebViewProxy'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
@@ -15,4 +15,4 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.8'  
   s.ios.framework    = 'UIKit'
   s.osx.framework    = 'WebKit'
-end
+end 
