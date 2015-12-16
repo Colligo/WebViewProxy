@@ -253,7 +253,9 @@ static NSPredicate* webViewProxyLoopDetection;
     return self;
 }
 - (void)startLoading {
-    self.requestMatcher.handler(_correctedRequest, self.proxyResponse);
+    if (self.requestMatcher != nil) {
+        self.requestMatcher.handler(_correctedRequest, self.proxyResponse);
+    }
 }
 - (void)stopLoading {
     _correctedRequest = nil;
