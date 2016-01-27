@@ -283,6 +283,7 @@ static NSPredicate* webViewProxyLoopDetection;
 }
 + (void)removeAllHandlers {
     requestMatchers = [NSMutableArray array];
+    [NSURLProtocol unregisterClass:[WebViewProxyURLProtocol class]];
 }
 + (void)handleRequestsWithScheme:(NSString *)scheme handler:(WVPHandler)handler {
     NSPredicate* predicate = [NSPredicate predicateWithFormat:@"scheme MATCHES[cd] %@", scheme];
