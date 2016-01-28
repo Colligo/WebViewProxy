@@ -275,11 +275,11 @@ static NSPredicate* webViewProxyLoopDetection;
 + (void)initialize {
     [WebViewProxy removeAllHandlers];
 
-    webViewUserAgentTest = [NSPredicate predicateWithFormat:@"self MATCHES '^i.*Colligo Engage.*'"];
+    webViewUserAgentTest = [NSPredicate predicateWithFormat:@"self MATCHES '^.*Colligo Engage.*'"];
     webViewProxyLoopDetection = [NSPredicate predicateWithFormat:@"self.fragment ENDSWITH '__webviewproxyreq__'"];
 
     // e.g. "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Mobile/10A403"
-    [NSURLProtocol registerClass:[WebViewProxyURLProtocol class]];
+  
 }
 + (void)removeAllHandlers {
     requestMatchers = [NSMutableArray array];
@@ -307,6 +307,8 @@ static NSPredicate* webViewProxyLoopDetection;
 + (void)handleRequestsMatching:(NSPredicate*)predicate handler:(WVPHandler)handler {
     // Match on any property of NSURL, e.g. "scheme MATCHES 'http' AND host MATCHES 'www.google.com'"
     [requestMatchers addObject:[WVPRequestMatcher matchWithPredicate:predicate handler:handler]];
+    [NSURLProtocol unregisterClass:[WebViewProxyURLProtocol class]];
+    [NSURLProtocol registerClass:[WebViewProxyURLProtocol class]];
 }
 + (NSString *)_normalizePath:(NSString *)path {
     if (![path hasPrefix:@"/"]) {
