@@ -275,7 +275,7 @@ static NSPredicate* webViewProxyLoopDetection;
 + (void)initialize {
     [WebViewProxy removeAllHandlers];
 
-    webViewUserAgentTest = [NSPredicate predicateWithFormat:@"self MATCHES '^.*Colligo Engage.*'"];
+    webViewUserAgentTest = [NSPredicate predicateWithFormat:@"self MATCHES '^.*Colligo (Engage|Briefcase).*'"];
     webViewProxyLoopDetection = [NSPredicate predicateWithFormat:@"self.fragment ENDSWITH '__webviewproxyreq__'"];
 
     // e.g. "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Mobile/10A403"
